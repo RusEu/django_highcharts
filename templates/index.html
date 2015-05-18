@@ -53,12 +53,10 @@ $(function () {
             type: 'pie',
             name: 'Browser share',
             data: [
-                ['Romania',   45.0],
-                ['Spain',       26.8],
-                ['UK', 12.8],
-                ['Germany',    8.5],
-                ['Australia',     6.2],
-                ['Others',   0.7]
+
+                {%for k,v in countrylist.items%}
+                ["{{k}}",   {{v}}],
+                {%endfor%}
             ]
         }]
     });
