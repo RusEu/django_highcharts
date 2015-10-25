@@ -1,3 +1,4 @@
+from __future__ import division
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from visitor.visitor_utils import *
@@ -16,6 +17,7 @@ def index(request):
 	for item , value in tmp_country.items() :
 		val = val + value
 	percent = 100 / val
+	print percent
 	countrylist={}
 	for item , value in tmp_country.items():
 		countrylist[str(item)] = value * percent
